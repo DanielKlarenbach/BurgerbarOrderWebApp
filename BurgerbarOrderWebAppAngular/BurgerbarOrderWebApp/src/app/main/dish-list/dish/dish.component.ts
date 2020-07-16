@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Dish } from 'src/app/models/dish';
 
 @Component({
   selector: 'app-dish',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dish.component.css']
 })
 export class DishComponent implements OnInit {
+  @Input() dish: Dish;
 
   constructor() { }
 

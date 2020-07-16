@@ -1,0 +1,4 @@
+<div id="main">
+    <app-menu (currentCategory)="setCurrentCategory($event)"></app-menu>
+    <app-dish-list [currentCategory]="currentCategory"></app-dish-list>
+</div>

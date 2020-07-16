@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges} from '@angular/core';
 
 @Component({
   selector: 'app-menu-item',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-item.component.css']
 })
 export class MenuItemComponent implements OnInit {
-
+  @Input('name') name: String;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

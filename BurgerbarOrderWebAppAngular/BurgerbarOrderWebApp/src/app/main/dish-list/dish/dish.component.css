@@ -1,0 +1,11 @@
+.name{
+    float: left;
+}
+
+.price{
+    float:right;
+}
+
+.description{
+    clear: both;
+}

@@ -70,4 +70,13 @@ insert into dish values (40,'Sosy', '', 'BBQ', 2);
 insert into dish values (41,'Sosy', '', 'Zielony', 2);
 insert into dish values (42,'Sosy', '', 'Honey Mustard', 2);
 
+-- categories
+insert into category values (1,'Burgery');
+insert into category values (2,'Sałatki');
+insert into category values (3,'Steki');
+insert into category values (4,'Napoje');
+insert into category values (5,'Dodatki');
+insert into category values (6,'Sosy');
+
+
 

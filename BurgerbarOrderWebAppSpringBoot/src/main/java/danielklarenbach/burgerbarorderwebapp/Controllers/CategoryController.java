@@ -1,10 +1,10 @@
 package danielklarenbach.burgerbarorderwebapp.Controllers;
 
+import danielklarenbach.burgerbarorderwebapp.Models.Category;
 import danielklarenbach.burgerbarorderwebapp.Models.Dish;
-import danielklarenbach.burgerbarorderwebapp.Repositories.DishRepository;
+import danielklarenbach.burgerbarorderwebapp.Repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,18 +12,12 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-public class DishController {
+public class CategoryController {
     @Autowired
-    private DishRepository repository;
+    private CategoryRepository repository;
 
-    @RequestMapping("/dishes")
-    public List<Dish> getAllDishes(){
+    @RequestMapping("/categories")
+    public List<Category> getAllCategories(){
         return repository.findAll();
     }
-
-    @RequestMapping("/dishes/{category}")
-    public List<Dish> getAllDishesInCategory(@PathVariable("category") String category){
-        return repository.findByCategory(category);
-    }
-
 }
