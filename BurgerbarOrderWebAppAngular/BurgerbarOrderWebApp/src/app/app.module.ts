@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './main/menu/menu.component';
 import { DishListComponent } from './main/dish-list/dish-list.component';
-import { LoginBarComponent } from './login-bar/login-bar.component';
 import { MenuItemComponent } from './main/menu/menu-item/menu-item.component';
 import { DishComponent } from './main/dish-list/dish/dish.component';
 import { MainComponent } from './main/main.component';
@@ -20,7 +19,6 @@ import { MainComponent } from './main/main.component';
     FooterComponent,
     MenuComponent,
     DishListComponent,
-    LoginBarComponent,
     MenuItemComponent,
     DishComponent,
     MainComponent,

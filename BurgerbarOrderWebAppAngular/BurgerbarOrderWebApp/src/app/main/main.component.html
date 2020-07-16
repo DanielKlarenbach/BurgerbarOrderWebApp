@@ -1,4 +1,4 @@
-<div id="main">
-    <app-menu (currentCategory)="setCurrentCategory($event)"></app-menu>
-    <app-dish-list [currentCategory]="currentCategory"></app-dish-list>
+<div class="row top-buffer" id="main">
+    <app-menu class="col-3" (currentCategory)="setCurrentCategory($event)"></app-menu>
+    <app-dish-list class="col-9" [currentCategory]="currentCategory"></app-dish-list>
 </div>
