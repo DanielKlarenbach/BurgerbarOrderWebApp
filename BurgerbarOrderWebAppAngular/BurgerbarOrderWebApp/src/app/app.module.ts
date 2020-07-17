@@ -11,6 +11,7 @@ import { DishListComponent } from './main/dish-list/dish-list.component';
 import { MenuItemComponent } from './main/menu/menu-item/menu-item.component';
 import { DishComponent } from './main/dish-list/dish/dish.component';
 import { MainComponent } from './main/main.component';
+import { PaginationComponent } from './main/dish-list/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MainComponent } from './main/main.component';
     MenuItemComponent,
     DishComponent,
     MainComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

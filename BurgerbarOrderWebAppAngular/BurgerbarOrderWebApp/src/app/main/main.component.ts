@@ -15,6 +15,5 @@ export class MainComponent implements OnInit {
 
   setCurrentCategory($event){
     this.currentCategory=$event;
-    console.log(this.currentCategory);
   }
 }

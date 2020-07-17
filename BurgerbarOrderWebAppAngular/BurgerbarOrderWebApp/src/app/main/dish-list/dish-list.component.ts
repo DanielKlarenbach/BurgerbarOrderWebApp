@@ -10,7 +10,9 @@ import { Dish } from 'src/app/models/dish';
 })
 export class DishListComponent implements OnInit, OnChanges {
   @Input() currentCategory: string;
+  firstIdFromCurrentCategory: number=0;
   dishes: Dish[];
+  currentPage: number=1;
 
   constructor(private http: HttpClient) { }
 
@@ -18,8 +20,26 @@ export class DishListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    let obs = this.http.get<Dish[]>('http://localhost:8081/dishes/'+this.currentCategory);
-    obs.subscribe((response) =>  this.dishes=response);
+    console.log(this.currentCategory);
+    let obs = this.http.get<Dish[]>('http://localhost:8081/dishes/'+this.currentCategory+'/0'); // w tym jest problem, musisz jakoś pierwsze indeksy wziać - mapa, albo czesc tablic w ngFor
+    obs.subscribe((response) =>  
+    {
+      this.dishes=response;
+      if(this.firstIdFromCurrentCategory==0) this.firstIdFromCurrentCategory=this.dishes[0].id;
+    });
+  }
+
+  setCurrentCategoryIndex($event): void{
+    this.currentPage=$event;
+    let tempIndex;
+    tempIndex='/'+(this.firstIdFromCurrentCategory+(this.currentPage-1)*6).toString();
+    console.log(tempIndex);
+    let obs = this.http.get<Dish[]>('http://localhost:8081/dishes/'+this.currentCategory+tempIndex);
+    obs.subscribe((response) =>  
+    {
+      this.dishes=response;
+      if(this.firstIdFromCurrentCategory==0) this.firstIdFromCurrentCategory=this.dishes[0].id;
+    });
   }
 
 }
