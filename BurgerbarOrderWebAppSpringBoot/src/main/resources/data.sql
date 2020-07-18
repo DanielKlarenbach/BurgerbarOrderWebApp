@@ -78,5 +78,8 @@ insert into category values (4,'Napoje');
 insert into category values (5,'Dodatki');
 insert into category values (6,'Sosy');
 
+--
+insert into user values (1,'pass','ROLE_USER','user');
+
 
 

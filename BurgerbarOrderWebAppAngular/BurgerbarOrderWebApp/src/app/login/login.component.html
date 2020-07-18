@@ -1,0 +1,22 @@
+<div class="login container col-6">
+    <h1 class="text-center">Login</h1>
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+          <div class="form-group">
+            <label for="email">Nazwa użytkownika:</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Wpisz nazwę użytkownika"
+              name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Hasło:</label>
+            <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Wpisz hasło"
+              name="password">
+          </div>
+          <button (click)=handleLogin() class="btn btn-success">Zaloguj się</button>
+        </form>
+      </div>
+    </div>
+  </div>

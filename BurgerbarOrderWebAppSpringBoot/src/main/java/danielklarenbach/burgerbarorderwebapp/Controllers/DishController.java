@@ -26,4 +26,8 @@ public class DishController {
         return repository.findByCategory(category);
     }
 
+    @RequestMapping("/dishes/{category}/{id}")
+    public List<Dish> getSixDishesInCategoryFromIndex(@PathVariable("category") String category,@PathVariable("id") int id) {
+        return repository.findSixDishesFromGivenId(category,id);
+    }
 }
