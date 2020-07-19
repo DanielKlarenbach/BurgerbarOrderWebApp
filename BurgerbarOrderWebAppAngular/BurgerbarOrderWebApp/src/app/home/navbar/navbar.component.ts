@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../../services/auth-service/auth.service';
 
 
 @Component({
@@ -10,14 +10,17 @@ import { HttpClient } from '@angular/common/http';
 export class NavbarComponent implements OnInit,DoCheck {
   userName: string;
 
-  constructor() { }
+  constructor(private authenticationService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   ngDoCheck(): void{
-    console.log(sessionStorage.getItem('authenticatedUser'))
     this.userName=sessionStorage.getItem('authenticatedUser');
+  }
+
+  handleLogout() {
+    this.authenticationService.logout();
   }
 
 }

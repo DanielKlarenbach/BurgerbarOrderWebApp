@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth-service/auth.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AuthService } from './services/auth-service/auth.service';
     PaginationComponent,
     HomeComponent,
     LoginComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

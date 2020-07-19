@@ -15,7 +15,16 @@
       <a *ngIf="userName" class="nav-link" href="#">{{userName}}</a>
     </li>
     <li class="nav-item">
-      <button class="btn btn-success" routerLink="/login">Zaloguj się</button>
+      <img *ngIf="userName" class="shopping-cart" src="../../assets/shopping-cart.png" routerLink="/shopping-cart">
+    </li>
+    <li class="nav-item">
+      <div *ngIf="userName; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock> 
+        <button class="btn btn-success" (click)="handleLogout()" routerLink="/">Wyloguj się</button>
+      </ng-template>
+      <ng-template #elseBlock>
+        <button class="btn btn-success" routerLink="/login">Zaloguj się</button>
+      </ng-template>
     </li>
   </ul>
 </nav>
