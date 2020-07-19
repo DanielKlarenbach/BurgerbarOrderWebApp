@@ -80,6 +80,8 @@ insert into category values (6,'Sosy');
 
 --
 insert into user values (1,'pass','ROLE_USER','user');
+insert into user values (2,'pass','ROLE_USER','user2');
+
 
 
 
