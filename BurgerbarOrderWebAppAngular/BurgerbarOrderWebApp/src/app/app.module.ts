@@ -16,7 +16,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth-service/auth.service';
+import { ShoppingCartService } from './services/shopping-cart/shopping-cart.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ShoppingCartItemComponent } from './shopping-cart/shopping-cart-list/shopping-cart-item/shopping-cart-item.component';
+import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     HomeComponent,
     LoginComponent,
     ShoppingCartComponent,
+    ShoppingCartItemComponent,
+    ShoppingCartListComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

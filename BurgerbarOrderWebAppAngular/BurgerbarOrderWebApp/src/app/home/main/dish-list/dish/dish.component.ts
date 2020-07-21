@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dish } from 'src/app/models/dish';
+import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-dish',
@@ -9,9 +10,12 @@ import { Dish } from 'src/app/models/dish';
 export class DishComponent implements OnInit {
   @Input() dish: Dish;
 
-  constructor() { }
+  constructor(private shoppingCart: ShoppingCartService) { }
 
   ngOnInit(): void {
   }
 
+  addToCart(): void{
+    this.shoppingCart.addToCart(this.dish);
+  }
 }
