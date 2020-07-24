@@ -1,7 +1,6 @@
 package danielklarenbach.burgerbarorderwebapp.Controllers;
 
 import danielklarenbach.burgerbarorderwebapp.Models.Category;
-import danielklarenbach.burgerbarorderwebapp.Models.Dish;
 import danielklarenbach.burgerbarorderwebapp.Repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

@@ -20,7 +20,7 @@ import { ShoppingCartService } from './services/shopping-cart/shopping-cart.serv
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartItemComponent } from './shopping-cart/shopping-cart-list/shopping-cart-item/shopping-cart-item.component';
 import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
-
+import {HttpInterceptorService} from './services/http-interceptor/httpinterceptor.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,13 @@ import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/sh
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService, ShoppingCartService],
+  providers: [AuthService, ShoppingCartService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

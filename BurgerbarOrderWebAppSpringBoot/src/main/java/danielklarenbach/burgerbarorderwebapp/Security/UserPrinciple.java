@@ -1,4 +1,4 @@
-package danielklarenbach.burgerbarorderwebapp;
+package danielklarenbach.burgerbarorderwebapp.Security;
 
 import danielklarenbach.burgerbarorderwebapp.Models.User;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +16,7 @@ public class UserPrinciple implements UserDetails {
     private List<GrantedAuthority> authorities;
 
     public UserPrinciple(User user){
-        this.userName=user.getUserName();
+        this.userName=user.getName();
         this.password=user.getPassword();
         this.authorities= Arrays.stream(user.getRoles().split(","))
                 .map(SimpleGrantedAuthority::new)

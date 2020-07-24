@@ -1,4 +1,4 @@
-package danielklarenbach.burgerbarorderwebapp;
+package danielklarenbach.burgerbarorderwebapp.Security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,14 +33,6 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    /*@Bean
-    public AuthenticationProvider provideAuthentication(){
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(userDetailsService);
-        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
-        return provider;
-    }*/
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
@@ -50,11 +42,15 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().
                 disable()
+                .headers().frameOptions().sameOrigin()
+                .and()
                 .authorizeRequests()
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/user").hasRole("USER")
+                .antMatchers("/order").hasRole("USER")
                 .antMatchers("/dishes/**").permitAll()
                 .antMatchers("/categories").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().cors()

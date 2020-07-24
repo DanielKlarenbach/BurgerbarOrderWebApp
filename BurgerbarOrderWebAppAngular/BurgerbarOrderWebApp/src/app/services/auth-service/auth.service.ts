@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import {bcrypt, saltRounds} from 'node_modules/bcrypt-pbkdf'
 
 @Injectable({
   providedIn: 'root'

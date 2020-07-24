@@ -1,5 +1,5 @@
 -- burgers
-insert into dish values (1,'Burgery','wołowina, pomidor, sałata lodowa, korniszon, cebula czerwona, ketchup, majonez','Classic'
+/*insert into dish values (1,'Burgery','wołowina, pomidor, sałata lodowa, korniszon, cebula czerwona, ketchup, majonez','Classic'
 ,22);
 insert into dish values (2,'Burgery','wołowina, pomidor, sałata lodowa, korniszon, czerwona cebula, ser cheddar, ketchup, majonez','Cheese'
 ,23);
@@ -79,8 +79,8 @@ insert into category values (5,'Dodatki');
 insert into category values (6,'Sosy');
 
 --
-insert into user values (1,'pass','ROLE_USER','user');
-insert into user values (2,'pass','ROLE_USER','user2');
+insert into user values (1,'user','pass','ROLE_USER');
+insert into user values (2,'user2','pass','ROLE_USER');*/
 
 
 

@@ -7,22 +7,22 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.print.DocFlavor;
+import javax.persistence.ManyToOne;
+import java.sql.Timestamp;
 
 @Data
 @Entity
 @NoArgsConstructor
-public class User {
+public class UserOrder {
     @Id
     @GeneratedValue
     private int id;
-    private String name;
-    private String password;
-    private String roles;
+    @ManyToOne(optional=false)
+    private User user;
+    private Timestamp date;
 
-    public User(String name, String password, String roles){
-        this.name=name;
-        this.password=password;
-        this.roles=roles;
+    public UserOrder(User user, Timestamp date){
+        this.user=user;
+        this.date=date;
     }
 }

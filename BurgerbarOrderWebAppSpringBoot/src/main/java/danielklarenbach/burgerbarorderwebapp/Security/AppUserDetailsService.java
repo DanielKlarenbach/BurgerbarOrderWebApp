@@ -1,4 +1,4 @@
-package danielklarenbach.burgerbarorderwebapp;
+package danielklarenbach.burgerbarorderwebapp.Security;
 
 import danielklarenbach.burgerbarorderwebapp.Models.User;
 import danielklarenbach.burgerbarorderwebapp.Repositories.UserRepository;
@@ -8,8 +8,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class AppUserDetailsService implements UserDetailsService {
     @Autowired
@@ -17,8 +15,12 @@ public class AppUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        Optional<User> user=repository.findByUserName(userName);
-        user.orElseThrow(() -> new UsernameNotFoundException("User not found"+userName));
-        return user.map(UserPrinciple::new).get();
+        User user;
+        try {
+            user = repository.findByName(userName);
+        } catch (UsernameNotFoundException exception){
+            throw (new UsernameNotFoundException("User not found" + userName));
+        }
+        return new UserPrinciple(user);
     }
 }
