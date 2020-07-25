@@ -22,6 +22,7 @@ export class AuthService {
       { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
         this.username = username;
         this.password = password;
+        console.log("auth"+this.username)
         this.registerSuccessfulLogin(username, password);
       }));
   }
@@ -32,6 +33,7 @@ export class AuthService {
 
   registerSuccessfulLogin(username, password) {
     sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, username)
+    sessionStorage.setItem("password",password);
   }
 
   logout() {

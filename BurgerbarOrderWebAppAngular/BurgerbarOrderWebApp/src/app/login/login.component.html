@@ -15,7 +15,7 @@
             <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Wpisz hasło"
               name="password">
           </div>
-          <button (click)=handleLogin() class="btn btn-success">Zaloguj się</button>
+          <button (click)=handleLogin() routerLink="/login" class="btn btn-success">Zaloguj się</button>
         </form>
       </div>
     </div>

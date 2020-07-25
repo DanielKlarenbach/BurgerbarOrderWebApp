@@ -19,9 +19,8 @@ export class ShoppingCartService {
   }
 
   sendOrder(): void{
-    console.log(this.order)
     let obs = this.http.post<Dish[]>('http://localhost:8081/order',this.order);
     obs.subscribe(() =>  console.log("got response"));
-
+    this.order=[];
   }
 }
