@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Dish } from 'src/app/models/dish';
 
@@ -12,6 +12,7 @@ export class DishListComponent implements OnInit, OnChanges {
   @Input() currentCategory: string;
   dishes: Dish[];
   currentPage: number=1;
+  numberOfPages: number;
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +22,8 @@ export class DishListComponent implements OnInit, OnChanges {
     {
       this.dishes=response;
       this.currentPage=1;
+      this.numberOfPages=Math.ceil(this.dishes.length/6)+1;
+
     });
   }
 
@@ -30,6 +33,8 @@ export class DishListComponent implements OnInit, OnChanges {
     {
       this.dishes=response;
       this.currentPage=1;
+      this.numberOfPages=Math.ceil(this.dishes.length/6);
+
     });
   }
 
