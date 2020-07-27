@@ -51,6 +51,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/dishes/**").permitAll()
                 .antMatchers("/categories").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
+                .antMatchers("/register").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().cors()
@@ -59,7 +60,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder getPasswordEncoder(){return NoOpPasswordEncoder.getInstance();}
+    public PasswordEncoder getPasswordEncoder(){return new BCryptPasswordEncoder();}
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {

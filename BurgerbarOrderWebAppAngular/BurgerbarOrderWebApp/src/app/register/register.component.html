@@ -1,10 +1,8 @@
-<div class="login container col-6">
-    <h1 class="text-center">Login</h1>
+<div class="register container col-6">
+    <h1 class="text-center">Zarejestruj się</h1>
     <div class="card">
       <div class="card-body">
         <form>
-          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
           <div class="form-group">
             <label for="email">Nazwa użytkownika:</label>
             <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Wpisz nazwę użytkownika"
@@ -15,9 +13,13 @@
             <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Wpisz hasło"
               name="password">
           </div>
-          <button (click)=handleLogin() routerLink="/login" class="btn btn-success">Zaloguj się</button>
+          <div class="form-group">
+            <label for="pwd">Powtórz hasło:</label>
+            <input type="password" class="form-control" [(ngModel)]="secondPassword" id="secondPassword" placeholder="Wpisz hasło"
+              name="password">
+          </div>
+          <button (click)=handleRegistration() routerLink="/login" class="btn btn-success">Zarejestruj się</button>
         </form>
-        <a routerLink="/register">Zarejestruj się</a>
       </div>
     </div>
   </div>

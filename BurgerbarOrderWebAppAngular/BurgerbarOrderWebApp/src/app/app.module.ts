@@ -20,7 +20,8 @@ import { ShoppingCartService } from './services/shopping-cart/shopping-cart.serv
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartItemComponent } from './shopping-cart/shopping-cart-list/shopping-cart-item/shopping-cart-item.component';
 import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
-import {HttpInterceptorService} from './services/http-interceptor/httpinterceptor.service'
+import {HttpInterceptorService} from './services/http-interceptor/httpinterceptor.service';
+import { RegisterComponent } from './register/register.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import {HttpInterceptorService} from './services/http-interceptor/httpintercepto
     ShoppingCartComponent,
     ShoppingCartItemComponent,
     ShoppingCartListComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
