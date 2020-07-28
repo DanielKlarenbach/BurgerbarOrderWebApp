@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth-service/auth.service';
 })
 export class NavbarComponent implements OnInit,DoCheck {
   userName: string;
+  roles: string;
 
   constructor(private authenticationService: AuthService) { }
 
@@ -16,7 +17,9 @@ export class NavbarComponent implements OnInit,DoCheck {
   }
 
   ngDoCheck(): void{
+    console.log(this.roles);
     this.userName=sessionStorage.getItem('authenticatedUser');
+    this.roles=sessionStorage.getItem('roles');
   }
 
   handleLogout() {

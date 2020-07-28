@@ -1,31 +1,23 @@
 package danielklarenbach.burgerbarorderwebapp.Controllers;
 
+import danielklarenbach.burgerbarorderwebapp.Models.User;
+import danielklarenbach.burgerbarorderwebapp.Repositories.UserRepository;
 import lombok.Data;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
 public class LoginController {
+    @Autowired
+    private UserRepository userRepository;
 
-    @RequestMapping("/user")
-    public Auth user() {
-        return new Auth("authenticated user");
-    }
-
-    @RequestMapping("/admin")
-    public String admin() {
-        return "authenticated admin";
-    }
-
-    @Data
-    public class Auth{
-        private String mess;
-
-        public Auth(String authenticated_user) {
-            this.mess=authenticated_user;
-        }
+    @RequestMapping("/login")
+    public User login(@RequestHeader("Authorization") String header) {
+        String withoutBasic=header.substring(6);
+        String userName=new String(Base64.decodeBase64(withoutBasic.getBytes())).split(":")[0];
+        User user=userRepository.findByName(userName);
+        return user;
     }
 }

@@ -23,7 +23,6 @@ export class DishListComponent implements OnInit, OnChanges {
       this.dishes=response;
       this.currentPage=1;
       this.numberOfPages=Math.ceil(this.dishes.length/6)+1;
-
     });
   }
 
@@ -34,7 +33,6 @@ export class DishListComponent implements OnInit, OnChanges {
       this.dishes=response;
       this.currentPage=1;
       this.numberOfPages=Math.ceil(this.dishes.length/6);
-
     });
   }
 
@@ -46,5 +44,4 @@ export class DishListComponent implements OnInit, OnChanges {
     if(index>=(this.currentPage-1)*6 && index<(this.currentPage-1)*6+6) return true;
     else return false;
   }
-
 }

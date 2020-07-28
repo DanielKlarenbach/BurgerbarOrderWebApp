@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import{User} from '../../models/user'
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,11 @@ export class AuthService {
   }
 
   authenticationService(username: String, password: String) {
-    return this.http.get(`http://localhost:8081/user`,
+    return this.http.get<User>(`http://localhost:8081/login`,
       { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
         this.username = username;
         this.password = password;
-        console.log("auth"+this.username)
-        this.registerSuccessfulLogin(username, password);
+        this.registerSuccessfulLogin(username, password,res.roles);
       }));
   }
 
@@ -31,9 +31,11 @@ export class AuthService {
     return 'Basic ' + window.btoa(username + ":" + password)
   }
 
-  registerSuccessfulLogin(username, password) {
+  registerSuccessfulLogin(username, password,roles) {
     sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, username)
     sessionStorage.setItem("password",password);
+    sessionStorage.setItem("roles",roles);
+    console.log(sessionStorage.getItem("roles"));
   }
 
   logout() {

@@ -21,7 +21,10 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartItemComponent } from './shopping-cart/shopping-cart-list/shopping-cart-item/shopping-cart-item.component';
 import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
 import {HttpInterceptorService} from './services/http-interceptor/httpinterceptor.service';
-import { RegisterComponent } from './register/register.component'
+import { RegisterComponent } from './register/register.component';
+import { AddDishComponent } from './add-dish/add-dish.component';
+import { EditContactDataComponent } from './edit-contact-data/edit-contact-data.component';
+import { EditDescriptionComponent } from './edit-description/edit-description.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,9 @@ import { RegisterComponent } from './register/register.component'
     ShoppingCartItemComponent,
     ShoppingCartListComponent,
     RegisterComponent,
+    AddDishComponent,
+    EditContactDataComponent,
+    EditDescriptionComponent,
   ],
   imports: [
     BrowserModule,
