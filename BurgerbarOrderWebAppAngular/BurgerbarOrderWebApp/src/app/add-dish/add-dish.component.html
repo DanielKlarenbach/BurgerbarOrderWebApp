@@ -1,18 +1,35 @@
 <div class="container" id="add-dish">
     <app-navbar></app-navbar>
-    <form>
-        <div class="form-group">
-            <label for="email">Nazwa:</label>
-            <input type="text" class="form-control" [(ngModel)]="name" name="name">
-        </div>
-        <div class="form-group">
-            <label for="email">Opis:</label>
-            <input type="text" class="form-control" [(ngModel)]="description" name="description">
-        </div>
-        <div class="form-group">
-            <label for="email">Cena:</label>
-            <input type="text" class="form-control" [(ngModel)]="name" name="name">
-        </div>
-        <button (click)="send()" class="btn btn-success">Wyślij</button>
-    </form>
+    <div class="row top-buffer-20px" id="add-dish">
+        <form class="col-6">
+            <h4>Dodaj danie</h4>
+            <div class="form-group">
+                <label for="email">Nazwa:</label>
+                <input type="text" class="form-control" [(ngModel)]="addName" name="addName">
+            </div>
+            <div class="form-group">
+                <label for="comment">Opis:</label>
+                <textarea class="form-control" [(ngModel)]="description" name="description" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Cena:</label>
+                <input type="text" class="form-control" [(ngModel)]="price" name="price">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Kategoria:</label>
+                <select class="form-control" [(ngModel)]="category" name="category">
+                    <option *ngFor="let category of categories">{{category.name}}</option>
+                </select>
+            </div>
+            <button (click)="addDish()" class="btn btn-success">Wyślij</button>
+        </form>
+        <form class="col-6">
+            <h4>Usuń danie</h4>
+            <div class="form-group">
+                <label for="email">Nazwa:</label>
+                <input type="text" class="form-control" [(ngModel)]="deleteName" name="deleteName">
+            </div>
+            <button (click)="deleteDish()" class="btn btn-danger">Wyślij</button>
+        </form>
+    </div>
 </div>
