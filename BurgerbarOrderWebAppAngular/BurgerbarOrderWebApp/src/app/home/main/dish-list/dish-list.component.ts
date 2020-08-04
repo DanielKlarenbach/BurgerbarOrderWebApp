@@ -17,24 +17,21 @@ export class DishListComponent implements OnInit, OnChanges {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    console.log("INIT")
     let obs = this.http.get<Dish[]>('http://localhost:8081/dishes');
     obs.subscribe((response) => {
       this.dishes = response;
       this.currentPage = 1;
       this.numberOfPages = Math.ceil(this.dishes.length / 6) + 1;
-      console.log(this.dishes)
     });
   }
 
   ngOnChanges(): void {
     if (!(this.currentCategory == null)) {
-      let obs = this.http.get<Dish[]>('http://localhost:8081/dishes' + this.currentCategory);
+      let obs = this.http.get<Dish[]>('http://localhost:8081/dishes/' + this.currentCategory);
       obs.subscribe((response) => {
         this.dishes = response;
         this.currentPage = 1;
         this.numberOfPages = Math.ceil(this.dishes.length / 6);
-        console.log(this.dishes)
       });
     }
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dish } from 'src/app/models/dish';
+import { OrderItem } from 'src/app/models/orderItem';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
 })
 export class DishComponent implements OnInit {
   @Input() dish: Dish;
+  quantity: number;
 
   constructor(private shoppingCart: ShoppingCartService) { }
 
@@ -16,7 +18,9 @@ export class DishComponent implements OnInit {
   }
 
   addToCart(): boolean{
-    this.shoppingCart.addToCart(this.dish);
+    this.shoppingCart.addToCart(new OrderItem(this.dish,this.quantity));
+    console.log(this.dish)
+    this.quantity=0;
     return false;
   }
 }

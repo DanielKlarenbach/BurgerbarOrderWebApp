@@ -1,4 +1,4 @@
 <div id="shopping-cart-list">
-    <app-shopping-cart-item *ngFor="let dish of shoppingCart.getOrder()" [dish]="dish">
+    <app-shopping-cart-item *ngFor="let orderItem of shoppingCart.getOrder()" [orderItem]="orderItem">
     </app-shopping-cart-item>
 </div>

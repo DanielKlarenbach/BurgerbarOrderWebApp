@@ -1,25 +1,26 @@
 import { Injectable } from '@angular/core';
 import {Dish} from '../../models/dish'
+import {OrderItem} from '../../models/orderItem'
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
-  order: Dish[]= new Array();
+  order: OrderItem[]= new Array();
 
   constructor(private http: HttpClient) { }
 
-  addToCart(dish: Dish): void{
-    this.order.push(dish);
+  addToCart(orderItem: OrderItem): void{
+    this.order.push(orderItem);
   }
 
-  getOrder(): Dish[]{
+  getOrder(): OrderItem[]{
     return this.order;
   }
 
   sendOrder(): void{
-    let obs = this.http.post<Dish[]>('http://localhost:8081/order',this.order);
+    let obs = this.http.post<OrderItem[]>('http://localhost:8081/order',this.order);
     obs.subscribe(() =>  console.log("got response"));
     this.order=[];
   }

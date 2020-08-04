@@ -3,6 +3,27 @@
         <h2 class="name card-title">{{dish.name}}</h2>
         <h4 class="price card-subtitle">{{dish.price}} zł</h4>
         <p class="description card-text">{{dish.description}}</p>
-        <a (click)="addToCart()" href="#" class="btn btn-danger">Dodaj do koszyka</a>
+        <a  href="#" class="btn btn-danger" data-toggle="modal" data-target="#quantityModal">Dodaj do koszyka</a>
+    </div>
+    <div class="modal" id="quantityModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Podaj ilość</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" [(ngModel)]="quantity" id="quantity" name="quantity">
+                          </div>    
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button (click)="addToCart()" type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>

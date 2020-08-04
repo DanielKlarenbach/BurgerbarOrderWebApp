@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dish } from 'src/app/models/dish';
+import { OrderItem } from 'src/app/models/orderItem';
 
 @Component({
   selector: 'app-shopping-cart-item',
@@ -7,7 +8,7 @@ import { Dish } from 'src/app/models/dish';
   styleUrls: ['./shopping-cart-item.component.css']
 })
 export class ShoppingCartItemComponent implements OnInit {
-  @Input() dish: Dish;
+  @Input() orderItem: OrderItem;
 
   constructor() { }
 

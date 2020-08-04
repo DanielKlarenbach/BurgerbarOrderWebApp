@@ -30,15 +30,14 @@ public class OrderController {
     private OrderItemRepository orderItemRepository;
 
     @PostMapping("/order")
-    public String getOrder(@RequestBody Dish[] dishes, @RequestHeader("Authorization") String header){
+    public String getOrder(@RequestBody OrderItem[] orderItems, @RequestHeader("Authorization") String header){
         String withoutBasic=header.substring(6);
         String userName=new String(Base64.decodeBase64(withoutBasic.getBytes())).split(":")[0];
         User user=userRepository.findByName(userName);
         UserOrder order=new UserOrder(user,new Timestamp(new java.util.Date().getTime()));
         orderRepository.save(order);
-        OrderItem orderItem;
-        for(Dish dish : dishes) {
-            orderItem=new OrderItem(order,dish,1);
+        for (OrderItem orderItem : orderItems) {
+            orderItem=new OrderItem(order,orderItem.getDish(), orderItem.getQuantity());
             OrderItemKey orderItemId = new OrderItemKey(orderItem.getOrder().getId(),orderItem.getDish().getId());
             orderItem.setId(orderItemId);
             orderItemRepository.save(orderItem);
