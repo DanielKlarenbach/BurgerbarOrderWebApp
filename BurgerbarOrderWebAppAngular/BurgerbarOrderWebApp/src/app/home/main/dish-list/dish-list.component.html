@@ -1,6 +1,6 @@
 <div id="dish-list">
     <div *ngFor="let dish of dishes, index as i">
-        <app-dish *ngIf="fun(i)" [dish]="dish"></app-dish>
+        <app-dish *ngIf="checkPage(i)" [dish]="dish"></app-dish>
     </div>
     <app-pagination [numberOfPages]="numberOfPages" (pageIndex)="setCurrentCategoryIndex($event)"></app-pagination>
 </div>

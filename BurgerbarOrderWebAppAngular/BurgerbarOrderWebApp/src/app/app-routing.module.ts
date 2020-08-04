@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { RegisterComponent } from './register/register.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
+import { EditContactDataComponent } from './edit-contact-data/edit-contact-data.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path:'login', component: LoginComponent},
   { path:'shopping-cart', component: ShoppingCartComponent},
   { path:'register', component: RegisterComponent},
-  { path: 'add-dish', component: AddDishComponent }
+  { path: 'add-dish', component: AddDishComponent },
+  { path: 'edit-contact-data', component: EditContactDataComponent}
 ];
 
 @NgModule({

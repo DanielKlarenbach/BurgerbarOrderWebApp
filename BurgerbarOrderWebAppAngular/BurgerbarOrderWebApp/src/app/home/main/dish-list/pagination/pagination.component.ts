@@ -22,19 +22,22 @@ export class PaginationComponent implements OnInit, OnChanges {
     this.localPageIndex=1;
   }
 
-  showPage(pageIndex: number): void{
+  showPage(pageIndex: number): boolean{
     this.localPageIndex=pageIndex;
     this.pageIndex.emit(pageIndex);
+    return false;
   }
 
-  previousPage(): void{
+  previousPage(): boolean{
     this.localPageIndex=this.localPageIndex-1;
     this.pageIndex.emit(this.localPageIndex);
+    return false;
   }
 
-  nextPage(): void{
+  nextPage(): boolean{
     this.localPageIndex=this.localPageIndex+1;
     this.pageIndex.emit(this.localPageIndex);
+    return false;
   }
 
 }

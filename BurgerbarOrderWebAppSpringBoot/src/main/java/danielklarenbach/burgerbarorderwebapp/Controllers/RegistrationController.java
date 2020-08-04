@@ -17,7 +17,6 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public void register(@RequestBody User clientUser){
-        System.out.println(clientUser);
         userRepository.save(new User(clientUser.getName(),passwordEncoder.encode(clientUser.getPassword()),"ROLE_USER"));
     }
 }

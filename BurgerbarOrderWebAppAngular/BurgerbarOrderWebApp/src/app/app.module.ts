@@ -24,7 +24,7 @@ import {HttpInterceptorService} from './services/http-interceptor/httpintercepto
 import { RegisterComponent } from './register/register.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { EditContactDataComponent } from './edit-contact-data/edit-contact-data.component';
-import { EditDescriptionComponent } from './edit-description/edit-description.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,8 +43,7 @@ import { EditDescriptionComponent } from './edit-description/edit-description.co
     ShoppingCartListComponent,
     RegisterComponent,
     AddDishComponent,
-    EditContactDataComponent,
-    EditDescriptionComponent,
+    EditContactDataComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,8 @@ export class DishComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(): void{
+  addToCart(): boolean{
     this.shoppingCart.addToCart(this.dish);
+    return false;
   }
 }

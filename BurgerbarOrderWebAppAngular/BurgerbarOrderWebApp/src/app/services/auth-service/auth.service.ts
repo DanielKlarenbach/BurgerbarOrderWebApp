@@ -35,7 +35,6 @@ export class AuthService {
     sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, username)
     sessionStorage.setItem("password",password);
     sessionStorage.setItem("roles",roles);
-    console.log(sessionStorage.getItem("roles"));
   }
 
   logout() {

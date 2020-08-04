@@ -15,10 +15,9 @@
           aria-haspopup="true" aria-expanded="false">
           Edytuj
         </button>
-        <div class="dropdown-menu" aria-labelledby="przykladowaLista">
-          <a class="dropdown-item" routerLink="/add-dish" href="#">Listę dań</a>
-          <a class="dropdown-item" href="#">Dane kontaktowe</a>
-          <a class="dropdown-item" href="#">Opis firmy</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/add-dish">Listę dań</a>
+          <a class="dropdown-item" routerLink="/edit-contact-data">Dane kontaktowe</a>
         </div>
       </div>
     </li>
@@ -34,7 +33,7 @@
     <li class="nav-item">
       <div *ngIf="userName; then thenBlock else elseBlock"></div>
       <ng-template #thenBlock>
-        <button class="btn btn-success" (click)="handleLogout()" routerLink="/">Wyloguj się</button>
+        <button class="btn btn-success" (click)="handleLogout()" routerLink="/home">Wyloguj się</button>
       </ng-template>
       <ng-template #elseBlock>
         <button class="btn btn-success" routerLink="/login">Zaloguj się</button>

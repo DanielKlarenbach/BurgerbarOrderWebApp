@@ -10,7 +10,6 @@ export class HttpInterceptorService implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (this.authenticationService.isUserLoggedIn() && req.url.indexOf('basicauth') === -1) {
-            console.log("dsa"+this.authenticationService.username+" "+this.authenticationService.password)
             const authReq = req.clone({
                 headers: new HttpHeaders({
                     'Content-Type': 'application/json',

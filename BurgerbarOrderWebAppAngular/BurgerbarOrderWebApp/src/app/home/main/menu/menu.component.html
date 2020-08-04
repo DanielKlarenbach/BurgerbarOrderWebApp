@@ -1,4 +1,4 @@
 <div class="list-group" id="menu">
-    <a href="home" class="category list-group-item list-group-item-action active">Menu</a>
+    <a href="/home" class="category list-group-item list-group-item-action active">Menu</a>
     <app-menu-item *ngFor="let category of categories" [name]="category.name" (click)="showCategory(category.name)"></app-menu-item>
 </div>

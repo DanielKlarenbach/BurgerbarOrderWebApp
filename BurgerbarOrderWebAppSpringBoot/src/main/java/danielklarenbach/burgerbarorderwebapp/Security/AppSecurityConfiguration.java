@@ -51,6 +51,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/order").hasRole("USER")
                 .antMatchers("/dishes/**").permitAll()
                 .antMatchers("/categories").permitAll()
+                .antMatchers("/contactdata").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/register").permitAll()
                 .anyRequest()
