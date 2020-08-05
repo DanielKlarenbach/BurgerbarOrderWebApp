@@ -1,4 +1,16 @@
-<div id="shopping-cart-list">
-    <app-shopping-cart-item *ngFor="let orderItem of shoppingCart.getOrder()" [orderItem]="orderItem">
-    </app-shopping-cart-item>
+<div id="shopping-cart-list" class="top-buffer-20px table-striped table-reponsive">
+    <h2>Twoje zamówienie</h2>
+    <table mdbTable class="table">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Cena</th>
+                <th>Ilość</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let orderItem of shoppingCart.getOrder()" app-shopping-cart-item [orderItem]="orderItem">
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -3,7 +3,7 @@ import { Dish } from 'src/app/models/dish';
 import { OrderItem } from 'src/app/models/orderItem';
 
 @Component({
-  selector: 'app-shopping-cart-item',
+  selector: '[app-shopping-cart-item]',
   templateUrl: './shopping-cart-item.component.html',
   styleUrls: ['./shopping-cart-item.component.css']
 })
