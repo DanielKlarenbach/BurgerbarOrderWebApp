@@ -17,6 +17,7 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnitUtil;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -34,7 +35,7 @@ public class OrderController {
         String withoutBasic=header.substring(6);
         String userName=new String(Base64.decodeBase64(withoutBasic.getBytes())).split(":")[0];
         User user=userRepository.findByName(userName);
-        UserOrder order=new UserOrder(user,new Timestamp(new java.util.Date().getTime()));
+        UserOrder order=new UserOrder(user,new Timestamp(new java.util.Date().getTime()),true);
         orderRepository.save(order);
         for (OrderItem orderItem : orderItems) {
             orderItem=new OrderItem(order,orderItem.getDish(), orderItem.getQuantity());
@@ -43,5 +44,15 @@ public class OrderController {
             orderItemRepository.save(orderItem);
         }
         return new String("got order");
+    }
+
+    @GetMapping("/activeorders")
+    public List<UserOrder> getActiveOrders(){
+        return orderRepository.findByIsActive(true);
+    }
+
+    @GetMapping("/activeorders/{orderId}")
+    public List<OrderItem> getDishesFromGivenOrder(@PathVariable("orderId") int orderId) {
+        return orderItemRepository.findDishesForGivenOrder(orderId);
     }
 }

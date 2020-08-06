@@ -20,9 +20,11 @@ public class UserOrder {
     @ManyToOne(optional=false)
     private User user;
     private Timestamp date;
+    private Boolean isActive;
 
-    public UserOrder(User user, Timestamp date){
+    public UserOrder(User user, Timestamp date, Boolean isActive){
         this.user=user;
         this.date=date;
+        this.isActive=isActive;
     }
 }

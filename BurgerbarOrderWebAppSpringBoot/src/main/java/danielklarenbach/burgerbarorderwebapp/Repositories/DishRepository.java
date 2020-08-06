@@ -12,5 +12,5 @@ public interface DishRepository extends JpaRepository <Dish,Integer> {
     Dish findByName(String name);
 
     @Query("select dish from Dish dish where dish.category=?1 and dish.id between ?2 and (?2+5)")
-    List<Dish> findSixDishesFromGivenId(String category,Integer Id);
+    List<Dish> findSixDishesFromGivenId(String category,Integer id);
 }

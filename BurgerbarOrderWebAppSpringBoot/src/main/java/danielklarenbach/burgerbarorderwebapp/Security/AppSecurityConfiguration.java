@@ -49,6 +49,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/edit/**").hasRole("ADMIN")
                 .antMatchers("/user").hasRole("USER")
                 .antMatchers("/order").hasRole("USER")
+                .antMatchers("/activeorders/**").hasRole("STAFF")
                 .antMatchers("/dishes/**").permitAll()
                 .antMatchers("/categories").permitAll()
                 .antMatchers("/contactdata").permitAll()
