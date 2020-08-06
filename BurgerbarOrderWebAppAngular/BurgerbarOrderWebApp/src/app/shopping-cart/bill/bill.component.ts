@@ -17,7 +17,7 @@ export class BillComponent implements OnInit {
 
   countBill(): number{
     let sum: number=0;
-    for(let orderItem of this.shoppingCart.getOrder()) sum+=orderItem.dish.price;
+    for(let orderItem of this.shoppingCart.getOrder()) sum+=orderItem.dish.price*orderItem.quantity;
     console.log(this.shoppingCart.getOrder())
     return sum;
   }

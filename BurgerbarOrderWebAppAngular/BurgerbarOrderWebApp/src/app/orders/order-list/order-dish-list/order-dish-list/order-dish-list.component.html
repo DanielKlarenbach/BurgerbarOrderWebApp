@@ -1,0 +1,14 @@
+<div class="table-responsive">
+    <table mdbTable class="table">
+        <thead>
+            <th>Nazwa</th>
+            <th>Ilość</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let orderItem of orderItems">
+                <td>{{orderItem.dish.name}}</td>
+                <td>{{orderItem.quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -25,6 +25,10 @@ import { RegisterComponent } from './register/register.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { EditContactDataComponent } from './edit-contact-data/edit-contact-data.component';
 import { BillComponent } from './shopping-cart/bill/bill.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderListComponent } from './orders/order-list/order-list.component';
+import { OrderListItemComponent } from './orders/order-list/order-list-item/order-list-item.component';
+import { OrderDishListComponent } from './orders/order-list/order-dish-list/order-dish-list/order-dish-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import { BillComponent } from './shopping-cart/bill/bill.component';
     RegisterComponent,
     AddDishComponent,
     EditContactDataComponent,
-    BillComponent
+    BillComponent,
+    OrdersComponent,
+    OrderListComponent,
+    OrderListItemComponent,
+    OrderDishListComponent
   ],
   imports: [
     BrowserModule,
