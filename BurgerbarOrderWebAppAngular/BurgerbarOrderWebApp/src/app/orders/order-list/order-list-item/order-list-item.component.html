@@ -1,3 +1,6 @@
 <td>{{order.id}}</td>
 <td>{{order.user.name}}</td>
 <td>{{order.date | date :'short'}}</td>
+<td> 
+    <button (click)="endOrder()" class="btn btn-danger">Zakończ</button>
+</td>

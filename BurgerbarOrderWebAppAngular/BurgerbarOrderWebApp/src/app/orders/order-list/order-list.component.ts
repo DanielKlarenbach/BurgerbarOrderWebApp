@@ -20,4 +20,11 @@ export class OrderListComponent implements OnInit {
       this.orders = response;
     });
   }
+
+  getActiveOrders(){
+    let obs = this.http.get<Order[]>('http://localhost:8081/activeorders');
+    obs.subscribe((response) => {
+      this.orders = response;
+    });
+  }
 }

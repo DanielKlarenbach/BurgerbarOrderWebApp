@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,  Output, EventEmitter } from '@angular/core';
 import { Order } from 'src/app/models/order';
-import { Dish } from 'src/app/models/dish';
 import { HttpClient } from '@angular/common/http';
 import { OrderItem } from 'src/app/models/orderItem';
 
@@ -13,6 +12,7 @@ import { OrderItem } from 'src/app/models/orderItem';
 export class OrderListItemComponent implements OnInit {
   @Input() order: Order;
   orderItems: OrderItem[];
+  @Output() endOrderEvent = new EventEmitter<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -21,6 +21,17 @@ export class OrderListItemComponent implements OnInit {
     obs.subscribe((response) => {
       this.orderItems = response;
     });
+  }
+
+  endOrder(): void{
+    console.log("endorder")
+    this.order.isActive=false;
+    let obs = this.http.put<Order>('http://localhost:8081/endorder',this.order);
+    obs.subscribe((response) => {
+      console.log(response);
+      this.endOrderEvent.emit("true");
+    });
+
   }
 
 }

@@ -10,7 +10,7 @@
         </thead>
         <tbody>
              <ng-container *ngFor="let order of orders">
-                <tr role="button" data-toggle="collapse" [attr.data-target]="'#d'+order.id" app-order-list-item [order]="order"></tr>
+                <tr role="button" data-toggle="collapse" (endOrderEvent)="getActiveOrders()" [attr.data-target]="'#d'+order.id" app-order-list-item [order]="order"></tr>
                 <tr class="collapse" [id]="'d'+order.id" app-order-dish-list [order]="order"></tr> 
              </ng-container>
         </tbody>

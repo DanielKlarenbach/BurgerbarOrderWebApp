@@ -55,4 +55,9 @@ public class OrderController {
     public List<OrderItem> getDishesFromGivenOrder(@PathVariable("orderId") int orderId) {
         return orderItemRepository.findDishesForGivenOrder(orderId);
     }
+
+    @PutMapping("/endorder")
+    public void endOrder(@RequestBody UserOrder order){
+        orderRepository.save(order);
+    }
 }

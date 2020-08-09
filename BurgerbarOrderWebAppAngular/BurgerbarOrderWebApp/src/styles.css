@@ -2,3 +2,6 @@
 .top-buffer-10px { margin-top:10px; }
 .top-buffer-5px { margin-top:5px; }
 .bottom-buffer-10px { margin-bottom:10px; }
+body {
+    background-image: url("./assets/background.jpg");
+}
