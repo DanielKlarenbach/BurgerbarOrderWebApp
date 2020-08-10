@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   }
 
   handleRegistration(): void{
-    let obs=this.http.post<User>('http://localhost:8081/register',new User(this.username,this.password));
+    let obs=this.http.post<User>('/register',new User(this.username,this.password));
     obs.subscribe((response) =>  console.log(response));
   }
 }

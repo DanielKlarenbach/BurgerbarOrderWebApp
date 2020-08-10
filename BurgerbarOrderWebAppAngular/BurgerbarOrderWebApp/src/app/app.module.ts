@@ -60,7 +60,7 @@ import { OrderDishListComponent } from './orders/order-list/order-dish-list/orde
     HttpClientModule,
     AppRoutingModule,
     FormsModule
-  ],
+        ],
   providers: [AuthService, ShoppingCartService,
     {
       provide: HTTP_INTERCEPTORS,

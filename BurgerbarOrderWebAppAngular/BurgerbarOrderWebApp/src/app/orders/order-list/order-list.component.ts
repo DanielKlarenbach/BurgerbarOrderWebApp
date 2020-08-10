@@ -15,14 +15,14 @@ export class OrderListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    let obs = this.http.get<Order[]>('http://localhost:8081/activeorders');
+    let obs = this.http.get<Order[]>('/activeorders');
     obs.subscribe((response) => {
       this.orders = response;
     });
   }
 
   getActiveOrders(){
-    let obs = this.http.get<Order[]>('http://localhost:8081/activeorders');
+    let obs = this.http.get<Order[]>('/activeorders');
     obs.subscribe((response) => {
       this.orders = response;
     });

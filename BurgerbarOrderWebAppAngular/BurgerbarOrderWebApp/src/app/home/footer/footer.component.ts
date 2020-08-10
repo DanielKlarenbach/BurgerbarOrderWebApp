@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    let obs = this.http.get<ContactData>('http://localhost:8081/contactdata'); 
+    let obs = this.http.get<ContactData>('/contactdata'); 
     obs.subscribe((response) =>  
     {
       this.contactData=response;

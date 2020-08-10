@@ -20,19 +20,19 @@ export class AddDishComponent implements OnInit {
   constructor( private http: HttpClient) { }
 
   ngOnInit(): void {
-    let obs = this.http.get<Category[]>('http://localhost:8081/categories');
+    let obs = this.http.get<Category[]>('/categories');
     obs.subscribe((response) =>  this.categories=response);
   }
   
   addDish(): void{
     let dish = new Dish(this.addName,this.description,this.price, this.category);
-    let obs=this.http.post<Dish>('http://localhost:8081/edit/adddish',dish);
+    let obs=this.http.post<Dish>('/edit/adddish',dish);
     obs.subscribe((response) =>  console.log(response));
 
   }
 
   deleteDish(): void{
-    let obs=this.http.delete('http://localhost:8081/edit/deletedish/'+this.deleteName);
+    let obs=this.http.delete('/edit/deletedish/'+this.deleteName);
     obs.subscribe((response) =>  console.log(response));
   }
 

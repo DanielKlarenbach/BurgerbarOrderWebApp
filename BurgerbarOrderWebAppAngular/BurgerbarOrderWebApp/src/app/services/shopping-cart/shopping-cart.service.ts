@@ -20,7 +20,7 @@ export class ShoppingCartService {
   }
 
   sendOrder(): void{
-    let obs = this.http.post<OrderItem[]>('http://localhost:8081/order',this.order);
+    let obs = this.http.post<OrderItem[]>('/order',this.order);
     obs.subscribe(() =>  console.log("got response"));
     this.order=[];
   }

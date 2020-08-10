@@ -17,7 +17,7 @@ export class OrderListItemComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    let obs = this.http.get<OrderItem[]>('http://localhost:8081/activeorders/'+this.order.id);
+    let obs = this.http.get<OrderItem[]>('/activeorders/'+this.order.id);
     obs.subscribe((response) => {
       this.orderItems = response;
     });
@@ -26,7 +26,7 @@ export class OrderListItemComponent implements OnInit {
   endOrder(): void{
     console.log("endorder")
     this.order.isActive=false;
-    let obs = this.http.put<Order>('http://localhost:8081/endorder',this.order);
+    let obs = this.http.put<Order>('/endorder',this.order);
     obs.subscribe((response) => {
       console.log(response);
       this.endOrderEvent.emit("true");

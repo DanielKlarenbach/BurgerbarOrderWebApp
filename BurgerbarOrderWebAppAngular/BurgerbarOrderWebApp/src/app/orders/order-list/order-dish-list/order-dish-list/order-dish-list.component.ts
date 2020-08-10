@@ -15,7 +15,7 @@ export class OrderDishListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    let obs = this.http.get<OrderItem[]>('http://localhost:8081/activeorders/'+this.order.id);
+    let obs = this.http.get<OrderItem[]>('/activeorders/'+this.order.id);
     obs.subscribe((response) => {
       this.orderItems = response;
     });

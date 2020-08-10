@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    let obs = this.http.get<Category[]>('http://localhost:8081/categories');
+    let obs = this.http.get<Category[]>('/categories');
     obs.subscribe((response) =>  this.categories=response);
   }
 

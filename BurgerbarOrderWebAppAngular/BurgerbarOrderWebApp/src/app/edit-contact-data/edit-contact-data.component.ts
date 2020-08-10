@@ -20,7 +20,7 @@ export class EditContactDataComponent implements OnInit {
   
   editContactData(): void{
     let contactData = new ContactData(this.phoneNumber,this.email,this.address, this.description);
-    let obs=this.http.put<ContactData>('http://localhost:8081/edit/editcontactdata',contactData);
+    let obs=this.http.put<ContactData>('/edit/editcontactdata',contactData);
     obs.subscribe((response) =>  console.log(response));
 
   }

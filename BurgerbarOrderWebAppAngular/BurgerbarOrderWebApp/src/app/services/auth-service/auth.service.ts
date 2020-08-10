@@ -8,7 +8,7 @@ import{User} from '../../models/user'
 })
 export class AuthService {
 
-  // BASE_PATH: 'http://localhost:8081'
+  // BASE_PATH: ''
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 
   public username: String;
@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   authenticationService(username: String, password: String) {
-    return this.http.get<User>(`http://localhost:8081/login`,
+    return this.http.get<User>(`/login`,
       { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
         this.username = username;
         this.password = password;

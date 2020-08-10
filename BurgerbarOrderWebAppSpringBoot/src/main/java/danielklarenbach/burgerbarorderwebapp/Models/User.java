@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.print.DocFlavor;
+import javax.persistence.Table;
+
 
 @Data
 @Entity
 @NoArgsConstructor
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue

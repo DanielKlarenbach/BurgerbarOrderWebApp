@@ -55,7 +55,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/categories").permitAll()
                 .antMatchers("/contactdata").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/register").permitAll()
+                .antMatchers("/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().cors()
