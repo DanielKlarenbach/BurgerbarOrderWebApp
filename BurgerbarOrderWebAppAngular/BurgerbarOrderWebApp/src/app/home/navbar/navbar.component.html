@@ -1,4 +1,4 @@
-<nav class="row top-buffer-20px navbar navbar-expand bg-primary navbar-dark">
+<nav class="row top-buffer-20px navbar navbar-expand-sm  bg-primary navbar-dark">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
       <a class="nav-link" href="/home">JohnnyBurger</a>
@@ -36,7 +36,7 @@
     <li class="nav-item">
       <div *ngIf="userName; then thenBlock else elseBlock"></div>
       <ng-template #thenBlock>
-        <button class="btn btn-success" (click)="handleLogout()" routerLink="/home">Wyloguj się</button>
+        <button class="btn btn-success" (click)="handleLogout()" routerLink="/login">Wyloguj się</button>
       </ng-template>
       <ng-template #elseBlock>
         <button class="btn btn-success" routerLink="/login">Zaloguj się</button>

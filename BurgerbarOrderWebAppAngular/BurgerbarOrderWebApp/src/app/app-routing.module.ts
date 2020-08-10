@@ -10,7 +10,7 @@ import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent},
-  { path:'home', component:HomeComponent,   runGuardsAndResolvers: 'always'},
+  { path:'home', component:HomeComponent, runGuardsAndResolvers: 'always'},
   { path:'login', component: LoginComponent},
   { path:'shopping-cart', component: ShoppingCartComponent},
   { path:'register', component: RegisterComponent},
@@ -20,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [    RouterModule.forRoot(routes,{useHash: true,enableTracing:true, onSameUrlNavigation: 'reload'})
+  imports: [    RouterModule.forRoot(routes,{useHash: true, enableTracing: true,  onSameUrlNavigation: 'reload'})
   ],
   exports: [RouterModule]
 })
