@@ -1,0 +1,9 @@
+.carousel-image img {
+    height: 450px !important;
+    width: 850px !important;
+}
+
+.carousel-inner > .carousel-item > img {
+    margin: 0 auto;
+    padding: 0 auto;
+  }

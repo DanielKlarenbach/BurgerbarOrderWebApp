@@ -3,9 +3,7 @@ package danielklarenbach.burgerbarorderwebapp.Models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -16,5 +14,7 @@ public class ContactData {
     private String phoneNumber;
     private String email;
     private String address;
+    @Lob
+    @Column(length = 1000000)
     private String description;
 }

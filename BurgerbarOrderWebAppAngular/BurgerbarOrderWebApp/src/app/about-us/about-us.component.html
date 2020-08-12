@@ -1,0 +1,30 @@
+<div class="container" id="about-us">
+    <app-navbar></app-navbar>
+    <div id="inside-bar" class="carousel slide row top-buffer-10px" data-interval="4000" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#inside-bar" data-slide-to="0" class="active"></li>
+            <li data-target="#inside-bar" data-slide-to="1"></li>
+            <li data-target="#inside-bar" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item carousel-image active">
+                <img class="d-block w-100" src="../../assets/inside_1.jpg">
+            </div>
+            <div class="carousel-item carousel-image">
+                <img class="d-block w-100" src="../../assets/inside_2.jpg">
+            </div>
+            <div class="carousel-item carousel-image">
+                <img class="d-block w-100" src="../../assets/inside_3.jpg">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#inside-bar" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#inside-bar" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <p class="row top-buffer-10px rounded" style="background-color: white;padding: 20px 20px 20px 20px;">
+        {{description}}
+    </p>
+</div>

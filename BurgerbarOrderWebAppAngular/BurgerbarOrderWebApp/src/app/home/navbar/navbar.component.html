@@ -1,13 +1,13 @@
 <nav class="row top-buffer-20px navbar navbar-expand-sm  bg-primary navbar-dark">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
-      <a class="nav-link" href="/home">JohnnyBurger</a>
+      <a class="nav-link" routerLink="/home">JohnnyBurger</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Kontakt</a>
+      <a class="nav-link" routerLink="/contact" >Kontakt</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">O nas</a>
+      <a class="nav-link" routerLink="/about-us">O nas</a>
     </li>
     <li class="nav-item">
       <div *ngIf="userName && roles==='ROLE_ADMIN'" class="dropdown">

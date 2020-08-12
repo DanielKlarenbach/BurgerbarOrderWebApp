@@ -30,7 +30,6 @@ public class EditController {
 
     @PutMapping("/editcontactdata")
     public void editContactData(@RequestBody ContactData contactData){
-        System.out.println(contactData);
         contactDataRepository.save(contactData);
     }
 }

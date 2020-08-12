@@ -29,6 +29,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
 import { OrderListItemComponent } from './orders/order-list/order-list-item/order-list-item.component';
 import { OrderDishListComponent } from './orders/order-list/order-dish-list/order-dish-list/order-dish-list.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { OrderDishListComponent } from './orders/order-list/order-dish-list/orde
     OrdersComponent,
     OrderListComponent,
     OrderListItemComponent,
-    OrderDishListComponent
+    OrderDishListComponent,
+    AboutUsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
