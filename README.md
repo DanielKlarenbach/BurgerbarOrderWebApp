@@ -14,6 +14,6 @@ BurgerbarOrderWebApp is a web application which imitates the restaurant site cap
 * Java 11
 
 ## Live version
-Application is deployed using heroku service. Link:
+Application is deployed using heroku service.
 [Link](https://johnnyburger.herokuapp.com) 
 
